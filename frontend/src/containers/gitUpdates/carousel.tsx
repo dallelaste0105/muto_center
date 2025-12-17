@@ -26,12 +26,14 @@ if (!Array.isArray(data)) {
 }
 
 return (
-
     <div className="carousel-container">
         <button onClick={()=>{setIndex(index-1)}}>-</button>
-            {data.map(item => (
-                <CarouselItem title={item[index].commit.message}/>
-            ))}
+            
+                <CarouselItem title={data[index-1].commit.message}/>
+                <CarouselItem title={data[index].commit.message}/>
+                <CarouselItem title={data[index+1].commit.message}/>
+                
+            
         <button onClick={()=>{setIndex(index+1)}}>+</button>
     </div>
 )
