@@ -1,8 +1,14 @@
-export default function CarouselItem({title, day}:{title:string, day:number}) {
+import "../../styles/gitUpdates.css"
+import {motion} from "framer-motion"
+
+export default function CarouselItem({title}:{title:string}) {
     return(<>
-        <div>
-            <h1>{title}</h1>
-            <p>{day}</p>
-        </div>
+        <motion.div className="carousel-card"
+            initial={{}}
+            animate={{zoom:1.1}}
+            transition={{duration:0.2}}
+        >
+            <p>{title}</p>
+        </motion.div>
     </>)
 }
