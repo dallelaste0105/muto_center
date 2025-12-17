@@ -1,13 +1,11 @@
-import { useState } from "react";
-import Card from "./card";
+import { Routes, Route, Navigate } from 'react-router-dom';
+import InitialScreen from './screens/initialScreen';
 
 export default function App() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <>
-      <button onClick={() => setOpen(true)}>Anime!</button>
-      <Card title="Título" subTitle="Descrição" start={open} />
-    </>
+    <Routes>
+      <Route path="/" element={<InitialScreen />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
